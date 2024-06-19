@@ -24,6 +24,8 @@ body {
     font-family: "Barlow Semi Condensed", sans-serif;
     background: radial-gradient(at top, var(--radial-gradient1), var(--radial-gradient2));
     min-height: 100vh;
+    text-transform: uppercase;
+    color: var(--light-text);
 }
 .main-container {
     margin: 0 auto;
@@ -49,19 +51,21 @@ body {
     align-items: center;
     width: 150px;
     height: 100%;
+    font-size: 1.5rem;
+    font-weight: bolder;
     line-height: 1;
     justify-content: center;
     border-radius: 10px;
     background: #fff;
+    color: var(--dark-text);
 }  
 .score-name {
    color: var(--score-text);
-   font-size: 1.1rem;
+   font-size: 20rem;
    letter-spacing: 0.1em; 
 }    
 .score-number {
-    font-size: 4rem;
-    font-weight: 700;
+    
     color: var(--score-text);
 }                                                                                                                                                          
 .main-game {
@@ -150,7 +154,80 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
+    grid-template-areas:
+     "you-title house-title"
+     "you-picked house-picked";
+     max-width: 1000px;
+     margin: 0 auto;
 }
+
+.outcome-heading {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    padding: 4rem 0 8rem;
+}
+
+.final-outcome {
+    min-width: 10em;
+    min-height: 10em;
+    background: #16213d;
+    border-radius: 50%;
+    transform: scale(1.4);
+    z-index: -1;
+}
+
+.outcome-heading:first-of-type {
+    grid-area: you-title;
+}
+
+
+.outcome-heading:last-of-type {
+    grid-area: house-title;
+}
+
+.final-outcome:first-of-type {
+    grid-area: you-picked;
+}
+
+.final-outcome:last-of-type {
+    grid-area: house-picked;
+}
+
+.outcome-winner {
+    grid-area outcome-winner;
+    display: grid;
+    place-items: center;
+}
+
+.outcome.show-winner {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    'you-title . house-title'
+    'you-picked outcome-winner house-picked'
+}
+.outcome-text {
+    font-size: 3.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.replay {
+    background-color: #ffffff;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 0.6rem;
+    color: var(--dark-text);
+    padding: 0.6rem 3.5rem;
+    font-family: inherit;
+    text-transform: inherit;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.replay:focus {
+    border: 2px solid var(--outline);
+}
+
 /*GameRules*/
 .game-rules {
     position: absolute;
@@ -216,4 +293,8 @@ body {
 /*others*/
 .loading * {
     transition: none;
+}
+
+.hidden {
+    display: none;
 }
