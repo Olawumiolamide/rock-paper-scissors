@@ -1,0 +1,19 @@
+a {
+    color: pink;
+}
+a:visited {
+    color: black;
+}
+.new-week {
+    text-align: center;
+    color: blueviolet;
+    font-style: italic;
+}
+/*Css Comment*/
+* {
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    color: limegreen !important;
+}

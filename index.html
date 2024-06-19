@@ -5,43 +5,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+  <link rel="stylesheet" href="/style.css">
+  <!--<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">-->
+  <script src="/app.js" defer></script>
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
+  <!--<button id="rules" onclick="toggleRules()">
+    Rules
+  </button>-->
 </head>
 
-<body>
-
-
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+<body class="loading">
+  <div class="main-container">
+    <header class="header">
+      <img src="./images/logo.svg" alt="game_logo" class="logo">
+      <div class="score">
+        <div class="score_name">SCORE</div>
+        <div class="score_number">12</div>
+      </div>
+    </header>
+    <section class="main-game">
+      <button class="selection-button" data-selection="paper">
+        <div class="selection paper">
+          <img src="/images/icon-paper.svg" alt="Paper">
+        </div>
+      </button>
+      <button class="selection-button" data-selection="scissors">
+        <div class="selection scissors">
+          <img src="/images/icon-scissors.svg" alt="Scissors">
+        </div>
+      </button>
+      <button class="selection-button" data-selection="rock">
+        <div class="selection rock">
+          <img src="/images/icon-rock.svg" alt="Rock">
+        </div>
+      </button>
+    </section>
   </div>
-</body>
 
+  <section class="outcome">
+    <h2 class="outcome-heading">you picked</h2>
+    <h2 class="outcome-heading">the house picked</h2>
+    <div class="final-outcome"></div>
+    <div class="final-outcome"></div>
+  </section>
+
+  <button class="game-rules" tabindex="1">RULES</button>
+  <div class="modal">
+    <div class="modal-box">
+      <header class="modal-header">
+        <h2 class="modal-heading">RULES</h2>
+        <button class="close-button">
+          <img src="./images/icon-close.svg" alt="Close button ">
+        </button>
+      </header>
+      <img src="./images/image-rules.svg" alt="Rules Pictures" class="rules-picture">
+    </div>
+  </div>
+  <!--<footer class="footer">
+    <div class="end">
+      Challenge by Group 1
+    </div>
+  </footer>-->
+  <script src="./index.js"></script>
+</body>
 </html>
