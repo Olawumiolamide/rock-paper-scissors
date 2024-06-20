@@ -194,7 +194,7 @@ body {
 }
 
 .outcome-winner {
-    grid-area outcome-winner;
+    grid-area: outcome-winner;
     display: grid;
     place-items: center;
 }
